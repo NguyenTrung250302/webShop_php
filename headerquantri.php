@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>SB Admin - Blank</title>
 
     <!-- Custom fonts for this template-->
     <link href="quantri/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,80 +28,84 @@
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+#collapseTwo {
+    display: block;
+}
 
-    <style>
-    #collapseTwo {
-        display: block;
-    }
+.sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
+    transform: rotate(90deg);
+}
 
-    .sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
-        transform: rotate(90deg);
-    }
+.heading_admin {
+    color: black;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
 
-    .heading_admin {
-        color: black;
-        width: 100%;
-        text-align: center;
-        margin: 20px 0;
-    }
+.container {
+    border-radius: 10px;
+}
 
-    .container {
-        border-radius: 10px;
-    }
+.table {
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    line-height: 32px;
+    border-radius: 2px;
+}
 
-    .table {
-        color: black;
-        text-align: center;
-        font-size: 16px;
-        line-height: 32px;
-        border-radius: 2px;
-    }
+.info__product-gr {
+    line-height: 120px;
+}
 
-    .info__product-gr {
-        line-height: 120px;
-    }
+.link_admin {
+    display: block;
+    color: white;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 10px;
+    transition: background-color ease-in .2s;
+}
 
-    .link_admin {
-        display: block;
-        color: white;
-        padding: 8px;
-        margin: 6px 0;
-        border-radius: 10px;
-        transition: background-color ease-in .2s;
-    }
+.link_admin-fix {
+    background-color: #ffb702;
+}
 
-    .link_admin-fix {
-        background-color: #ffb702;
-    }
+.link_admin-delete {
+    background-color: #ff623d;
+}
 
-    .link_admin-delete {
-        background-color: #ff623d;
-    }
+.link_admin-footer {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 14px;
+}
 
-    .link_admin-footer {
-        width: 100%;
-        text-align: center;
-        padding-bottom: 20px;
-        margin-top: 14px;
-    }
+a.link_admin-btn {
+    color: white;
+    text-decoration: none;
+    background-color: #71be34;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: background-color ease-in .2s;
+}
 
-    a.link_admin-btn {
-        color: white;
-        text-decoration: none;
-        background-color: #71be34;
-        padding: 12px 16px;
-        border-radius: 10px;
-        margin-top: 5px;
-        transition: background-color ease-in .2s;
-    }
+.link_admin:hover,
+a.link_admin-btn:hover {
 
-    .link_admin:hover,
-    a.link_admin-btn:hover {
-
-        color: white;
-        background-image: linear-gradient(65deg, orange, blueviolet);
-    }
-    </style>
+    color: white;
+    background-image: linear-gradient(65deg, orange, blueviolet);
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -251,12 +255,12 @@
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <!-- <hr class="sidebar-divider d-none d-md-block"> -->
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
+            <!-- <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            </div> -->
 
         </ul>
         <!-- End of Sidebar -->
@@ -268,7 +272,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar  static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -425,7 +429,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="index_home.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -443,11 +447,31 @@
                                     Logout
                                 </a>
                             </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Sẵn sàng đăng xuất?</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Bạn có chắc muốn "Đăng Xuất" ngay chứ?</div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button"
+                                                data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-primary" href="logout.php">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
 
                     </ul>
-
                 </nav>
+
 
                 <!-- Bootstrap core JavaScript-->
                 <script src="vendor/jquery/jquery.min.js"></script>
@@ -458,3 +482,7 @@
 
                 <!-- Custom scripts for all pages-->
                 <script src="js/sb-admin-2.min.js"></script>
+                <!-- jQuery -->
+                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                <!-- Bootstrap JavaScript -->
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
