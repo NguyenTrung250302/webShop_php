@@ -14,19 +14,13 @@
 
     <!-- Custom fonts for this template-->
     <link href="quantri/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="quantri/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="quantri/css/sb-admin-2.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -34,77 +28,77 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 </head>
 <style>
-#collapseTwo {
-    display: block;
-}
+    #collapseTwo {
+        display: block;
+    }
 
-.sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
-    transform: rotate(90deg);
-}
+    .sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
+        transform: rotate(90deg);
+    }
 
-.heading_admin {
-    color: black;
-    width: 100%;
-    text-align: center;
-    margin: 20px 0;
-}
+    .heading_admin {
+        color: black;
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
 
-.container {
-    border-radius: 10px;
-}
+    .container {
+        border-radius: 10px;
+    }
 
-.table {
-    color: black;
-    text-align: center;
-    font-size: 16px;
-    line-height: 32px;
-    border-radius: 2px;
-}
+    .table {
+        color: black;
+        text-align: center;
+        font-size: 16px;
+        line-height: 32px;
+        border-radius: 2px;
+    }
 
-.info__product-gr {
-    line-height: 120px;
-}
+    .info__product-gr {
+        line-height: 120px;
+    }
 
-.link_admin {
-    display: block;
-    color: white;
-    padding: 8px;
-    margin: 6px 0;
-    border-radius: 10px;
-    transition: background-color ease-in .2s;
-}
+    .link_admin {
+        display: block;
+        color: white;
+        padding: 8px;
+        margin: 6px 0;
+        border-radius: 10px;
+        transition: background-color ease-in .2s;
+    }
 
-.link_admin-fix {
-    background-color: #ffb702;
-}
+    .link_admin-fix {
+        background-color: #ffb702;
+    }
 
-.link_admin-delete {
-    background-color: #ff623d;
-}
+    .link_admin-delete {
+        background-color: #ff623d;
+    }
 
-.link_admin-footer {
-    width: 100%;
-    text-align: center;
-    padding-bottom: 20px;
-    margin-top: 14px;
-}
+    .link_admin-footer {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+        margin-top: 14px;
+    }
 
-a.link_admin-btn {
-    color: white;
-    text-decoration: none;
-    background-color: #71be34;
-    padding: 12px 16px;
-    border-radius: 10px;
-    margin-top: 5px;
-    transition: background-color ease-in .2s;
-}
+    a.link_admin-btn {
+        color: white;
+        text-decoration: none;
+        background-color: #71be34;
+        padding: 12px 16px;
+        border-radius: 10px;
+        margin-top: 5px;
+        transition: background-color ease-in .2s;
+    }
 
-.link_admin:hover,
-a.link_admin-btn:hover {
+    .link_admin:hover,
+    a.link_admin-btn:hover {
 
-    color: white;
-    background-image: linear-gradient(65deg, orange, blueviolet);
-}
+        color: white;
+        background-image: linear-gradient(65deg, orange, blueviolet);
+    }
 </style>
 </head>
 
@@ -136,13 +130,11 @@ a.link_admin-btn:hover {
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fa-solid fa-users"></i>
                     <span>Mục tài khoản</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tài khoản:</h6>
                         <a class="collapse-item" href="taikhoan.php">Các tài khoản</a>
@@ -163,8 +155,7 @@ a.link_admin-btn:hover {
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-brands fa-product-hunt"></i>
                     <span>Mục sản phẩm</span>
                 </a>
@@ -206,8 +197,7 @@ a.link_admin-btn:hover {
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-book-open-reader"></i>
                     <span>Mục tin tức</span>
                 </a>
@@ -225,8 +215,7 @@ a.link_admin-btn:hover {
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-cart-plus"></i>
                     <span>Mục đơn hàng</span>
                 </a>
@@ -286,12 +275,10 @@ a.link_admin-btn:hover {
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Dropdown - Messages -->
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                            aria-labelledby="searchDropdown">
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                             <form class="form-inline mr-auto w-100 navbar-search">
                                 <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small"
-                                        placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button">
                                             <i class="fas fa-search fa-sm"></i>
@@ -304,15 +291,13 @@ a.link_admin-btn:hover {
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
@@ -355,21 +340,19 @@ a.link_admin-btn:hover {
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <img class="rounded-circle" src="./quantri/img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -380,7 +363,7 @@ a.link_admin-btn:hover {
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <img class="rounded-circle" src="./quantri/img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -391,7 +374,7 @@ a.link_admin-btn:hover {
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <img class="rounded-circle" src="./quantri/img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -402,8 +385,7 @@ a.link_admin-btn:hover {
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
@@ -420,15 +402,12 @@ a.link_admin-btn:hover {
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"> Quản lí</span>
-                                <img class="img-profile rounded-circle"
-                                    src="https://www.shutterstock.com/image-vector/user-icon-trendy-flat-style-260nw-418179865.jpg">
+                                <img class="img-profile rounded-circle" src="https://www.shutterstock.com/image-vector/user-icon-trendy-flat-style-260nw-418179865.jpg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="index_home.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -448,8 +427,7 @@ a.link_admin-btn:hover {
                                 </a>
                             </div>
                             <!-- Modal -->
-                            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -460,8 +438,7 @@ a.link_admin-btn:hover {
                                         </div>
                                         <div class="modal-body">Bạn có chắc muốn "Đăng Xuất" ngay chứ?</div>
                                         <div class="modal-footer">
-                                            <button class="btn btn-secondary" type="button"
-                                                data-dismiss="modal">Cancel</button>
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                                             <a class="btn btn-primary" href="logout.php">Logout</a>
                                         </div>
                                     </div>
