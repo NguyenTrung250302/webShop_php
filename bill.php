@@ -66,6 +66,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,37 +76,43 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="shortcut icon" href="assets/img/iconweb.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="main.js"></script>
     <link rel="stylesheet" href="styles.scss">
     <style>
-
     /* Image */
     .product__items-img {
-        height:210px;
+        height: 210px;
     }
 
     /* Tin Tức */
     .news-items__img {
         width: 100%;
-        height:256px;
+        height: 256px;
         border-radius: 20px;
     }
+
     .news-items__msg {
         color: #afa5a8;
         font-size: 1.4rem;
         line-height: 1.8rem;
-        max-height:3.6rem;
+        max-height: 3.6rem;
         overflow: hidden;
-        display:-webkit-box;
+        display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-    }   
+    }
+
     .news-items__permission-date::before {
         display: none;
     }
+
     /*----------*/
 
     /* Nút Liên Hệ */
@@ -123,23 +130,23 @@
 
     .news-items__msg-full {
         display: block;
-        max-height:unset;
-        line-height:2.4rem;
-        color:var(--black-color);
-        font-size:1.8rem;
-        font-weight:500;
-        text-align:left;
+        max-height: unset;
+        line-height: 2.4rem;
+        color: var(--black-color);
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-align: left;
     }
 
     .news-items__title-strong {
-        font-size:3.2rem;
-        font-weight:600;
-        margin-bottom:0;
+        font-size: 3.2rem;
+        font-weight: 600;
+        margin-bottom: 0;
     }
 
     .news-items__permission-strong {
-        font-size:1.6rem;
-        font-weight:500; 
+        font-size: 1.6rem;
+        font-weight: 500;
     }
 
     /* Login */
@@ -153,41 +160,41 @@
     /* In - Out Header */
 
     .header-top__join-in {
-        color:white;
-        font-size:1.4rem;
-        font-weight:300;
-        user-select:none;
-        padding-right:10px;
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 300;
+        user-select: none;
+        padding-right: 10px;
     }
 
     .header-top__join-out {
-        text-decoration:none;
-        color:black;
-        font-size:1.4rem;
-        font-weight:500;
-        padding-left:10px;
-        transition:color ease-in .2s;
-        border-left:2px solid white;
-        header:18px;
+        text-decoration: none;
+        color: black;
+        font-size: 1.4rem;
+        font-weight: 500;
+        padding-left: 10px;
+        transition: color ease-in .2s;
+        border-left: 2px solid white;
+        header: 18px;
     }
 
     .header-top__join-out:hover {
-        color:#fe9614;
+        color: #fe9614;
     }
-    
+
     /* Search btn */
 
     .header-top__search-icon {
-        border:none;
-        cursor:pointer;
+        border: none;
+        cursor: pointer;
     }
 
     /* Button add-cart */
 
     .detail-items__btn {
-        margin-top:0;
+        margin-top: 0;
     }
-    
+
     .detail-items__btn-cart {
 
         width: 100%;
@@ -195,7 +202,7 @@
     }
 
     .detail-items__quantity-num {
-        margin:40px 0;
+        margin: 40px 0;
     }
 
     /* Cart */
@@ -203,7 +210,7 @@
     .cart__info {
         display: flex;
         flex-direction: column;
-        border:1px solid #ccc;
+        border: 1px solid #ccc;
         border-radius: 10px;
         width: 80%;
         padding: 21px;
@@ -222,10 +229,10 @@
     }
 
     .cart__info-input {
-        flex:1;
-        padding:12px 8px;
+        flex: 1;
+        padding: 12px 8px;
         border-radius: 2px;
-        border:1px solid #ccc;
+        border: 1px solid #ccc;
     }
 
     .cart__table-num {
@@ -236,14 +243,14 @@
 
     .cart__table {
         border: 1px solid #000;
-        border-collapse:collapse;
+        border-collapse: collapse;
         width: 100%;
         font-size: 1.4rem;
     }
 
-    thead th{
+    thead th {
         width: 15%;
-        border: 1px solid #000; 
+        border: 1px solid #000;
     }
 
     tbody td {
@@ -258,8 +265,8 @@
     }
 
     .cart__table-money {
-        background-color:#99989a;
-        height:40px;
+        background-color: #99989a;
+        height: 40px;
     }
 
     .cart__table-money-text {
@@ -274,8 +281,8 @@
 
     .cart__table-btn-agree,
     .cart__table-btn-delete,
-    .cart__table-btn-home{
-        text-decoration:none;
+    .cart__table-btn-home {
+        text-decoration: none;
         min-width: 160px;
         padding: 12px;
         border-radius: 10px;
@@ -287,12 +294,12 @@
         cursor: pointer;
         transition: background-color ease-in .2s;
     }
-    
+
     .cart__table-btn-delete,
     .cart__table-btn-home {
         min-width: 160px;
-        text-align:center;
-        margin-left:5px;
+        text-align: center;
+        margin-left: 5px;
     }
 
     .cart__table-btn-agree:hover,
@@ -315,41 +322,40 @@
     .detail-items__quantity {
         display: block;
     }
-
-</style>
+    </style>
 </head>
 <div class="cart">
-            <div class="grid wide">
-                <div class="row">
-                    <div class="col l-12 ">
-                    
-                        <div class="cart__fill">   
-                            
-                            <?php echo $ttkh; ?>    
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 ">
 
-                        </div>
-                                           
-                        <div class="cart__product">
-                            <h3 class="product__heading">Giỏ hàng</h3>
-                            <table class="cart__table">
-                                <thead>
-                                    <th>STT</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Đơn giá</th>
-                                    <th>Số lượng</th>
-                                    <th>Thành tiền</th>
-                
-                                </thead>
-                                <tbody>
-                                <?php echo $ttgh; ?>
-                                </tbody>
-                            </table>
+                <div class="cart__fill">
 
-                        </div>
-                   
-                    </div>
+                    <?php echo $ttkh; ?>
+
                 </div>
+
+                <div class="cart__product">
+                    <h3 class="product__heading">Giỏ hàng</h3>
+                    <table class="cart__table">
+                        <thead>
+                            <th>STT</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+
+                        </thead>
+                        <tbody>
+                            <?php echo $ttgh; ?>
+                        </tbody>
+                    </table>
+
+                </div>
+
             </div>
+        </div>
+    </div>
 </div>
 <?php include "footernguoidung.php";?>

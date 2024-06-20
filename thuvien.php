@@ -1,52 +1,55 @@
 <?php
 include "function_sanpham.php";
 
-function taogiohang($tensp, $img, $dongia,$soluong,$thanhtien,$idbill){
-    $conn=ketnoidb();
-        $sql = "INSERT INTO cart (tensp, img, dongia, soluong, thanhtien, idbill)
+function taogiohang($tensp, $img, $dongia, $soluong, $thanhtien, $idbill)
+{
+    $conn = ketnoidb();
+    $sql = "INSERT INTO cart (tensp, img, dongia, soluong, thanhtien, idbill)
         VALUES ('$tensp', '$img', '$dongia', '$soluong', '$thanhtien', '$idbill')";
-        // use exec() because no results are returned
-        $conn->exec($sql);
-        $conn = null; 
+    // use exec() because no results are returned
+    $conn->exec($sql);
+    $conn = null;
 }
 
-function taodonhang($name, $address, $tel, $email, $total, $pttt){
+function taodonhang($name, $address, $tel, $email, $total, $pttt)
+{
     $conn = ketnoidb();
     $sql = "INSERT INTO bill (name, address, tel, email, total, pttt) VALUES ('$name', '$address', '$tel', '$email', '$total', '$pttt')";
     $conn->exec($sql);
     $last_id = $conn->lastInsertId();
-    $conn = null; 
+    $conn = null;
 
     return $last_id;
 }
 
-function ketnoidb(){
+function ketnoidb()
+{
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "tangquangnghiadk12cntt2";
+    $dbname = "doanwebtqn";
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
 }
 
-function tongdonhang(){
-    $tong=0;
-    if(isset($_SESSION['giohang'])&&(is_array($_SESSION['giohang']))){
+function tongdonhang()
+{
+    $tong = 0;
+    if (isset($_SESSION['giohang']) && (is_array($_SESSION['giohang']))) {
         // Nếu giỏ hàng lớn hơn 0 thì in ra phần này còn <= 0 thì in ra giỏ hảng trống 
-        if(sizeof($_SESSION['giohang'])>0){
-        
-        for($i=0;$i<sizeof($_SESSION['giohang']);$i++){
-            $tt = intval($_SESSION['giohang'][$i][2]) * intval($_SESSION['giohang'][$i][3]);
-            $tong+=$tt;
-        }
-            
+        if (sizeof($_SESSION['giohang']) > 0) {
+
+            for ($i = 0; $i < sizeof($_SESSION['giohang']); $i++) {
+                $tt = intval($_SESSION['giohang'][$i][2]) * intval($_SESSION['giohang'][$i][3]);
+                $tong += $tt;
+            }
         }
     }
     return $tong;
@@ -126,7 +129,8 @@ function showgiohang1()
     return $ttgh;
 }
 
-function getOrdersByUser($user){
+function getOrdersByUser($user)
+{
     $conn = ketnoidb();
     $sql = "SELECT * FROM bill WHERE name = :user";
     $stmt = $conn->prepare($sql);
@@ -139,7 +143,8 @@ function getOrdersByUser($user){
 
 
 
-function getOrderDetails($orderId){
+function getOrderDetails($orderId)
+{
     $conn = ketnoidb();
     $sql = "SELECT * FROM cart WHERE idbill = :orderId";
     $stmt = $conn->prepare($sql);
@@ -152,7 +157,8 @@ function getOrderDetails($orderId){
 }
 
 // Thêm hàm huyDonHang vào thuvien.php
-function huyDonHang($orderId) {
+function huyDonHang($orderId)
+{
     $conn = ketnoidb();
 
     // Xóa dữ liệu đơn hàng từ bảng cart
@@ -172,7 +178,3 @@ function huyDonHang($orderId) {
 
     $conn = null;
 }
-?>
-
-
-

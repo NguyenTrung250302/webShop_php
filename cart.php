@@ -103,23 +103,23 @@ if (isset($_POST['dongydathang'])) {
                                 echo showgiohang();
                                 
                                 ?>
-                                <!-- <tr>
-                                        <td>1</td>
-                                        <td><img src="assets/img/aohoodie.jpg" alt="áo đó" class="cart__table-img"></td>
-                                        <td>Áo hoodie</td>
-                                        <td>120.000đ</td>
-                                        <td><input type="number" value="1" class="cart__table-num"></td>
-                                        <td>120.000đ</td>
-                                        <td></td>
-                                    </tr> -->
-                                <!-- <tr class="cart__table-money" colspan="6">
-                                        <th class="cart__table-money-text" colspan="5">
-                                            Tổng đơn hàng 
-                                        </th>
-                                        <th>
-                                            100000
-                                        </th>
-                                    </tr> -->
+                                <tr>
+                                    <td>1</td>
+                                    <td><img src="assets/img/aohoodie.jpg" alt="áo đó" class="cart__table-img"></td>
+                                    <td>Áo hoodie</td>
+                                    <td>120.000đ</td>
+                                    <td><input type="number" value="1" class="cart__table-num"></td>
+                                    <td>120.000đ</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="cart__table-money" colspan="6">
+                                    <th class="cart__table-money-text" colspan="5">
+                                        Tổng đơn hàng
+                                    </th>
+                                    <th>
+                                        100000
+                                    </th>
+                                </tr>
                             </tbody>
                         </table>
                         <div class="cart__table-btn">
