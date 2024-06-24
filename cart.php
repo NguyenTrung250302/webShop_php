@@ -103,7 +103,7 @@ if (isset($_POST['dongydathang'])) {
                                 echo showgiohang();
                                 
                                 ?>
-                                <tr>
+                                <!-- <tr>
                                     <td>1</td>
                                     <td><img src="assets/img/aohoodie.jpg" alt="áo đó" class="cart__table-img"></td>
                                     <td>Áo hoodie</td>
@@ -119,7 +119,7 @@ if (isset($_POST['dongydathang'])) {
                                     <th>
                                         100000
                                     </th>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                         <div class="cart__table-btn">

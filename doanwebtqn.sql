@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 07, 2024 lúc 05:45 PM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.0.28
+-- Host: 127.0.0.1
+-- Generation Time: Jun 24, 2024 at 10:21 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `doanwebtqn`
+-- Database: `doanwebtqn`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill`
+-- Table structure for table `bill`
 --
 
 CREATE TABLE `bill` (
@@ -39,7 +39,7 @@ CREATE TABLE `bill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `bill`
+-- Dumping data for table `bill`
 --
 
 INSERT INTO `bill` (`id`, `name`, `address`, `tel`, `email`, `total`, `pttt`, `user`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `bill` (`id`, `name`, `address`, `tel`, `email`, `total`, `pttt`, `u
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -64,7 +64,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `lienhe`
+-- Table structure for table `lienhe`
 --
 
 CREATE TABLE `lienhe` (
@@ -75,7 +75,7 @@ CREATE TABLE `lienhe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `lienhe`
+-- Dumping data for table `lienhe`
 --
 
 INSERT INTO `lienhe` (`hoten`, `email`, `sdt`, `ghichu`) VALUES
@@ -84,7 +84,26 @@ INSERT INTO `lienhe` (`hoten`, `email`, `sdt`, `ghichu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sanpham`
+-- Table structure for table `role`
+--
+
+CREATE TABLE `role` (
+  `id` int(11) NOT NULL,
+  `role_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `role`
+--
+
+INSERT INTO `role` (`id`, `role_name`) VALUES
+(1, 'user'),
+(2, 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -101,7 +120,7 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sanpham`
+-- Dumping data for table `sanpham`
 --
 
 INSERT INTO `sanpham` (`masp`, `nhom_id`, `tensp`, `mota`, `soluong`, `dongia`, `dongiaold`, `img`, `enable`, `ghichu`) VALUES
@@ -115,7 +134,7 @@ INSERT INTO `sanpham` (`masp`, `nhom_id`, `tensp`, `mota`, `soluong`, `dongia`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sanpham_nhom`
+-- Table structure for table `sanpham_nhom`
 --
 
 CREATE TABLE `sanpham_nhom` (
@@ -125,7 +144,7 @@ CREATE TABLE `sanpham_nhom` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sanpham_nhom`
+-- Dumping data for table `sanpham_nhom`
 --
 
 INSERT INTO `sanpham_nhom` (`id`, `tennhom`, `ghichu`) VALUES
@@ -137,45 +156,31 @@ INSERT INTO `sanpham_nhom` (`id`, `tennhom`, `ghichu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role`
+-- Table structure for table `taikhoan`
 --
-CREATE TABLE `role` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-
---
--- Đang đổ dữ liệu cho bảng `role`
---
-INSERT INTO `role` (`id`, `role_name`) VALUES
-(1, 'user'),
-(2, 'admin');
-
---
--- Cấu trúc bảng cho bảng `taikhoan`
---
 CREATE TABLE `taikhoan` (
-    `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `tendangnhap` VARCHAR(30) NOT NULL,
-    `matkhau` VARCHAR(30) DEFAULT NULL,
-    `hoten` VARCHAR(30) DEFAULT NULL,
-    `email` VARCHAR(30) DEFAULT NULL,
-    `enable` TINYINT(11) NOT NULL,
-    `role_id` INT NOT NULL DEFAULT 1,
-    CONSTRAINT `fk_taikhoan_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  `id` int(11) NOT NULL,
+  `tendangnhap` varchar(30) NOT NULL,
+  `matkhau` varchar(30) DEFAULT NULL,
+  `hoten` varchar(30) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `enable` tinyint(11) NOT NULL,
+  `role_id` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Đang đổ dữ liệu cho bảng `taikhoan`
-INSERT INTO `taikhoan` (`tendangnhap`, `matkhau`, `hoten`, `email`, `enable`, `role_id`) VALUES
-('anhA', '123', 'anhA', 'anhA@gmail.com', 1, 1),
-('admin', 'admin', 'admin', 'admin@gmail.com', 1, 2);
+--
+-- Dumping data for table `taikhoan`
+--
+
+INSERT INTO `taikhoan` (`id`, `tendangnhap`, `matkhau`, `hoten`, `email`, `enable`, `role_id`) VALUES
+(1, 'anhA', '123', 'anhA', 'anhA@gmail.com', 1, 1),
+(2, 'admin', 'admin', 'admin', 'admin@gmail.com', 1, 2);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tintuc`
+-- Table structure for table `tintuc`
 --
 
 CREATE TABLE `tintuc` (
@@ -189,7 +194,7 @@ CREATE TABLE `tintuc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tintuc`
+-- Dumping data for table `tintuc`
 --
 
 INSERT INTO `tintuc` (`id`, `nhom_id`, `tentintuc`, `tennguoidang`, `ngaydang`, `mota`, `img`) VALUES
@@ -199,7 +204,7 @@ INSERT INTO `tintuc` (`id`, `nhom_id`, `tentintuc`, `tennguoidang`, `ngaydang`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tintuc_nhom`
+-- Table structure for table `tintuc_nhom`
 --
 
 CREATE TABLE `tintuc_nhom` (
@@ -209,7 +214,7 @@ CREATE TABLE `tintuc_nhom` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tintuc_nhom`
+-- Dumping data for table `tintuc_nhom`
 --
 
 INSERT INTO `tintuc_nhom` (`id`, `tennhom`, `ghichu`) VALUES
@@ -219,61 +224,89 @@ INSERT INTO `tintuc_nhom` (`id`, `tennhom`, `ghichu`) VALUES
 (4, 'Phụ kiện du lịch', 'perfect ');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `bill`
+-- Indexes for table `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tintuc`
+-- Indexes for table `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_taikhoan_role` (`role_id`);
+
+--
+-- Indexes for table `tintuc`
 --
 ALTER TABLE `tintuc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tintuc_nhom`
+-- Indexes for table `tintuc_nhom`
 --
 ALTER TABLE `tintuc_nhom`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `role`
+-- AUTO_INCREMENT for table `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `bill`
+-- AUTO_INCREMENT for table `taikhoan`
 --
-ALTER TABLE `bill`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `taikhoan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT cho bảng `tintuc`
+-- AUTO_INCREMENT for table `tintuc`
 --
 ALTER TABLE `tintuc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  ADD CONSTRAINT `fk_taikhoan_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
