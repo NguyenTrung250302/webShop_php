@@ -1,4 +1,4 @@
-<?php include "headernguoidung.php";?>
+<?php include "headernguoidung.php"; ?>
 <?php
 
 if (!isset($_SESSION['giohang'])) {
@@ -37,8 +37,6 @@ if (isset($_POST['addcart']) && ($_POST['addcart'])) {
         $sp = [$img, $tensp, $dongia, $soluong];
         $_SESSION['giohang'][] = $sp;
     }
-
-    
 }
 
 
@@ -49,7 +47,7 @@ include "thuvien.php";
 // Unset giỏ hàng session chỉ khi ấn nút dongydathang
 if (isset($_POST['dongydathang'])) {
     // Set giỏ hàng về rỗng
-// Lưu trữ giỏ hàng vào biến tạm thời
+    // Lưu trữ giỏ hàng vào biến tạm thời
     $cartBackup = $_SESSION['giohang'];
     unset($_SESSION['giohang']);
     $_SESSION['order_success'] = true;
@@ -67,7 +65,7 @@ if (isset($_POST['dongydathang'])) {
                         <h3 class="product__heading">Thông tin nhận hàng</h3>
                         <div class="cart__info l-o-1">
                             <div class="cart__info-gr">
-                                <span class="cart__info-text">Họ tên</span>
+                                <span class="cart__info-text">User Name</span>
                                 <input type="text" name="hoten" class="cart__info-input">
                             </div>
                             <div class="cart__info-gr">
@@ -98,10 +96,10 @@ if (isset($_POST['dongydathang'])) {
                                 <th>Chức năng</th>
                             </thead>
                             <tbody>
-                                <?php 
-                                
+                                <?php
+
                                 echo showgiohang();
-                                
+
                                 ?>
                                 <!-- <tr>
                                     <td>1</td>
@@ -136,4 +134,4 @@ if (isset($_POST['dongydathang'])) {
     </div>
 </div>
 
-<?php include "footernguoidung.php";?>
+<?php include "footernguoidung.php"; ?>

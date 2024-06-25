@@ -132,12 +132,15 @@ function showgiohang1()
 function getOrdersByUser($user)
 {
     $conn = ketnoidb();
+    // get name user trong bảng bill phải trùng với tên username tài khoản đã đăng nhập thì mới hiển thị được thông tin đơn hàng ! 
     $sql = "SELECT * FROM bill WHERE name = :user";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':user', $user, PDO::PARAM_STR);
+
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $conn = null;
+
     return $result;
 }
 
