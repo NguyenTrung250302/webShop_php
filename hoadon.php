@@ -31,38 +31,38 @@ $count = mysqli_num_rows($result);
                         while ($row = mysqli_fetch_assoc($result)) { ?>
                             <tr>
                                 <td>
-                                    <?PHP echo $row["id"] ?>
+                                    <?php echo $row["id"] ?>
                                 </td>
                                 <td>
-                                    <?PHP echo $row["name"] ?>
+                                    <?php echo $row["name"] ?>
                                 </td>
                                 <td>
-                                    <?PHP echo $row["address"] ?>
+                                    <?php echo $row["address"] ?>
                                 </td>
                                 <td>
-                                    <?PHP echo $row["tel"] ?>
+                                    <?php echo $row["tel"] ?>
                                 </td>
                                 <td>
-                                    <?PHP echo $row["email"] ?>
+                                    <?php echo $row["email"] ?>
                                 </td>
                                 <td>
                                     <?PHP echo $row["total"] ?>
                                 </td>
 
                                 <!-- <td>
-                                    <?PHP echo $row["pttt"] ?>
+                                    <?php echo $row["pttt"] ?>
                                 </td>
                                 <td>
-                                    <?PHP echo $row["user"] ?>
+                                    <?php echo $row["user"] ?>
                                 </td> -->
 
                                 <td>
-                                    <a class="link_admin link_admin-delete" href="xoahoadon.php?id=<?PHP echo $row[" id"] ?>" style="text-decoration: none">Xóa</a>
+                                    <a class="link_admin link_admin-delete" href="xoahoadon.php?id=<?php echo $row["id"] ?>" style="text-decoration: none">Xóa</a>
                                 </td>
 
                             </tr>
 
-                    <?PHP }
+                    <?php }
                     }   ?>
                 </tbody>
             </table>
