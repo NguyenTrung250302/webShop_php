@@ -129,7 +129,11 @@ INSERT INTO `sanpham` (`masp`, `nhom_id`, `tensp`, `mota`, `soluong`, `dongia`, 
 (3, '2', 'Vợt cầu lông Tiến Minh  ', '...  ', 3, 820000, 900000, 'Vợt cầu lông.jpg', 1, '...  '),
 (4, '2', 'Bóng chuyền Vnasport  ', '...  ', 3, 65000, 172000, 'quả-bóng-chuyền-vnasports.jpg', 1, '...  '),
 (5, '3', 'Vali Nhựa  ', '...  ', 14, 600000, 700000, 'vali-nhua-205-20-inch-24-inch-den-6-1.jpg', 1, '...  '),
-(6, '4', 'Hộp đựng bàn chải đánh răng  ', '...  ', 6, 70000, 82000, 'hopdungbanchai.jpg', 1, '...  ');
+(6, '4', 'Hộp đựng bàn chải đánh răng  ', '...  ', 6, 70000, 82000, 'hopdungbanchai.jpg', 1, '...  '),
+(7, '1', 'Hộp đựng bàn chải đánh răng  ', '...  ', 20, 100000, 150000, 'a.jpg', 1, '...  '),
+(8, '2', 'Bóng rổ chuyên dụng Indoor', '...', 7, 170000, 200000, 'bongro.jpg', 1, '...'),
+(9, '5', 'Nón Bucket thời trang', '...', 11, 210000, 260000, 'bucket.jpg', 1, '...'),
+(10, '5', 'Phụ kiện đồng hồ nữ', '...', 4, 400000, 620000, 'mau-dong-ho-deo-tay-nu-mat-hinh-canh-buom.jpg', 1, '...');
 
 -- --------------------------------------------------------
 
@@ -151,7 +155,8 @@ INSERT INTO `sanpham_nhom` (`id`, `tennhom`, `ghichu`) VALUES
 (1, 'Giày', '...'),
 (2, 'Dụng cụ thể thao giã ngoại', '...'),
 (3, 'Vali', '...'),
-(4, 'Phụ kiện du lịch', '...');
+(4, 'Phụ kiện du lịch', '...'),
+(5, 'Phụ kiện thời trang', '...');
 
 -- --------------------------------------------------------
 

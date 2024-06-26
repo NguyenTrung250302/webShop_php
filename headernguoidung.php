@@ -439,8 +439,8 @@ tbody td {
                 <div class="header-top">
                     <div class="header-top__gr">
                         <a href="index_home.php">
-                            <img src="assets/img/shop_logo.png" alt="" style="border-radius: 6px;width: 140px;
-    height: 60px;"></a>
+                            <img src="assets/img/logoabc.png" alt="" style="width: 120px;
+    height: 80px;"></a>
                         <!-- <a href=" #!" class="header__left">
                             <h1 class="header__left-title">Nguyễn Hương <span class="header__left-private">Shop</span>
                             </h1>
