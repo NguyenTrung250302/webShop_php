@@ -1,67 +1,66 @@
-<?php include "headernguoidung.php";?>
+<?php include "headernguoidung.php"; ?>
 <?php
-    
-    include "thuvien.php";
-    if(isset($_POST['dongydathang'])){
 
-        // Lấy thông tin khách hàng từ form để tạo đơn hàng
-        $name=$_POST['hoten'];
-        $address=$_POST['diachi'];
-        $tel=$_POST['dienthoai'];
-        $email=$_POST['email'];
-        $total=tongdonhang();
-        $pttt=0;
+include "thuvien.php";
+if (isset($_POST['dongydathang'])) {
 
-        // Insert đơn hàng - Tạo đơn hàng mới , // Lấy thông tin giỏ hàng từ session + id đơn hàng vừa tạo
+    // Lấy thông tin khách hàng từ form để tạo đơn hàng
+    $name = $_POST['hoten'];
+    $address = $_POST['diachi'];
+    $tel = $_POST['dienthoai'];
+    $email = $_POST['email'];
+    $total = tongdonhang();
+    $pttt = 0;
 
-        $idbill=taodonhang($name, $address, $tel,$email,$total,$pttt);
+    // Insert đơn hàng - Tạo đơn hàng mới , // Lấy thông tin giỏ hàng từ session + id đơn hàng vừa tạo
 
-        // Insert vào bảng giỏ hàng 
+    $idbill = taodonhang($name, $address, $tel, $email, $total, $pttt);
 
-        for($i=0;$i < sizeof($_SESSION['giohang']);$i++){
-            $tensp = $_SESSION['giohang'][$i][1];
-            $img = $_SESSION['giohang'][$i][0];
-            $dongia = intval($_SESSION['giohang'][$i][2]); // intval dùng để biến thành kiểu số , bên dưới cũng vậy 
-            $soluong = intval($_SESSION['giohang'][$i][3]);
-            $thanhtien = $dongia * $soluong;
-            taogiohang($tensp, $img, $dongia,$soluong,$thanhtien,$idbill);
-        }
+    // Insert vào bảng giỏ hàng 
 
-        // Show confirm giỏ hàng
+    for ($i = 0; $i < sizeof($_SESSION['giohang']); $i++) {
+        $tensp = $_SESSION['giohang'][$i][1];
+        $img = $_SESSION['giohang'][$i][0];
+        $dongia = intval($_SESSION['giohang'][$i][2]); // intval dùng để biến thành kiểu số , bên dưới cũng vậy 
+        $soluong = intval($_SESSION['giohang'][$i][3]);
+        $thanhtien = $dongia * $soluong;
+        taogiohang($tensp, $img, $dongia, $soluong, $thanhtien, $idbill);
+    }
 
-        $ttkh=' <h2> Mã đơn hàng : '.$idbill.' </h2>
+    // Show confirm giỏ hàng
+
+    $ttkh = ' <h2> Mã đơn hàng : ' . $idbill . ' </h2>
                 <h3 class="product__heading">Thông tin nhận hàng</h3>
                 <div class="cart__info l-o-1">
                     <div class="cart__info-gr">
                         <span class="cart__info-text">Họ tên</span>
-                        <input type="text" value="'.$name.'" class="cart__info-input">
+                        <input type="text" value="' . $name . '" class="cart__info-input">
                     </div>
                     <div class="cart__info-gr">
                         <span class="cart__info-text">Địa chỉ</span>
-                        <input type="text" value="'.$address.'" class="cart__info-input">
+                        <input type="text" value="' . $address . '" class="cart__info-input">
                     </div>
                     <div class="cart__info-gr">
                         <span class="cart__info-text">Điện thoại</span>
-                        <input type="text" value="'.$tel.'" class="cart__info-input">
+                        <input type="text" value="' . $tel . '" class="cart__info-input">
                     </div>
                     <div class="cart__info-gr">
                         <span class="cart__info-text">Email</span>
-                        <input type="text" value="'.$email.'" class="cart__info-input">
+                        <input type="text" value="' . $email . '" class="cart__info-input">
                     </div>
                 </div> ';
 
 
-        $ttgh = showgiohang1();
+    $ttgh = showgiohang1();
 
-        echo "<script> alert('Bạn đã đặt hàng thành công!') </script>";
+    echo "<script> alert('Bạn đã đặt hàng thành công!') </script>";
+}
 
-    }
+// Sau khi đã thêm đơn hàng thành công
+// Xóa sản phẩm đã thêm vào giỏ hàng
 
-    // Sau khi đã thêm đơn hàng thành công
-    // Xóa sản phẩm đã thêm vào giỏ hàng
 
-    
-    $_SESSION['giohang'] = [];
+$_SESSION['giohang'] = [];
 
 ?>
 <!DOCTYPE html>
@@ -358,4 +357,4 @@
         </div>
     </div>
 </div>
-<?php include "footernguoidung.php";?>
+<?php include "footernguoidung.php"; ?>
