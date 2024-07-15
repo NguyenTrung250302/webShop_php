@@ -14,7 +14,17 @@ if (!$conn) {
 }
 
 $masp = isset($_GET['masp']) ? $_GET['masp'] : '';
-$sql = "SELECT * FROM `sanpham`WHERE masp='$masp' ";
+$sql = "SELECT sp.*, 
+               GROUP_CONCAT(DISTINCT sz.size ORDER BY sz.size SEPARATOR ', ') AS sizes, 
+               GROUP_CONCAT(DISTINCT ms.mau_sac ORDER BY ms.mau_sac SEPARATOR ', ') AS colors
+        FROM sanpham sp
+        LEFT JOIN sanpham_size sps ON sp.masp = sps.sanpham_id
+        LEFT JOIN size sz ON sps.size_id = sz.id
+        LEFT JOIN sanpham_mau_sac spms ON sp.masp = spms.sanpham_id
+        LEFT JOIN mau_sac ms ON spms.mau_sac_id = ms.id
+        WHERE sp.masp = '$masp'
+        GROUP BY sp.masp";
+
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 ?>
@@ -57,17 +67,40 @@ $row = mysqli_fetch_array($result);
                         </div>
                     </div>
                     <div class="detail-items__warehouse">
-                        <p class="detail-items__warehouse-remaining"><strong>Kho hàng còn</strong>
-                            :<?php echo $row["soluong"] ?> cái</p>
+                        <p class="detail-items__warehouse-remaining"><strong>Kho hàng còn </strong>
+                            : <?php echo $row["soluong"] ?> cái</p>
                     </div>
-                    <!-- show thuộc tính màu sắc cho sản phầm -->
-                    <div class="container_properties_products">
-                        <h1>màu sắc</h1>
-                    </div>
-                    <!-- show thuộc tính các size của sản phẩm -->
-                    <div class="container_properties_products">
-                        <h1>size</h1>
-                    </div>
+                    <!-- Hiển thị thuộc tính màu sắc cho sản phẩm -->
+                    <p class="detail-items__properties"><strong>Màu sắc:</strong> <select name="mau_sac"
+                            class="detail-items__select">
+                            <?php
+                            if (!empty($row["colors"])) {
+                                $colors = explode(', ', $row["colors"]);
+                                foreach ($colors as $color) {
+                                    echo "<option value='$color'>$color</option>";
+                                }
+                            } else {
+                                echo "<option disabled>Không có màu sắc</option>";
+                            }
+                            ?>
+                        </select></p>
+
+                    <!-- Hiển thị thuộc tính các size của sản phẩm -->
+
+                    <p class="detail-items__properties"><strong>Size:</strong> <select name="size"
+                            class="detail-items__select">
+                            <?php
+                            if (!empty($row["sizes"])) {
+                                $sizes = explode(', ', $row["sizes"]);
+                                foreach ($sizes as $size) {
+                                    echo "<option value='$size'>$size</option>";
+                                }
+                            } else {
+                                echo "<option disabled>Không có size</option>";
+                            }
+                            ?>
+                        </select></p>
+
                     <form action="cart.php" method="post" class="">
                         <p class="detail-items__quantity-text">Số lượng: <input class="detail-items__quantity-num"
                                 type="number" name="soluong" min="1" max="10" value="1"></p>
@@ -91,14 +124,8 @@ $row = mysqli_fetch_array($result);
     </div>
 </div>
 
-<style>
-.container_properties_products {
-    margin: 5px 0;
-    background-color: gainsboro;
-    width: auto;
-    height: 100px;
-}
 
+<style>
 .detail_items__imgs {
     width: 100%;
     height: auto;
@@ -106,5 +133,36 @@ $row = mysqli_fetch_array($result);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border: 2px solid darkgrey;
     border-radius: 5px;
+}
+
+
+.detail-items__properties {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.detail-items__select {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 20%;
+    /* Để dropdown chiếm toàn bộ chiều rộng */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+.detail-items__select:focus {
+    border-color: #007bff;
+    /* Thay đổi màu viền khi focus */
+    outline: none;
+    /* Bỏ outline mặc định */
+}
+
+.detail-items__select option {
+    padding: 10px;
+    /* Padding cho option */
 }
 </style>

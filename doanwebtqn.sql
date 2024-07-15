@@ -58,6 +58,7 @@ CREATE TABLE `cart` (
   `soluong` int(3) NOT NULL,
   `thanhtien` int(12) NOT NULL,
   `idbill` int(12) NOT NULL,
+  `size` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`idbill`) REFERENCES `bill`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1;
@@ -82,7 +83,7 @@ INSERT INTO `lienhe` (`hoten`, `email`, `sdt`, `ghichu`) VALUES
 ('Nguyễn Văn A', 'anhA@gmail.com', 12345678, '...');
 
 --
--- Table structure for table `sanpham_nhom`
+-- Table structure for table `sanpham_nhom` 
 --
 
 CREATE TABLE `sanpham_nhom` (
@@ -98,7 +99,7 @@ CREATE TABLE `sanpham_nhom` (
 
 INSERT INTO `sanpham_nhom` (`id`, `tennhom`, `ghichu`) VALUES
 (1, 'Giày', '...'),
-(2, 'Dụng cụ thể thao giã ngoại', '...'),
+(2, 'Dụng cụ thể thao dã ngoại', '...'),
 (3, 'Vali', '...'),
 (4, 'Phụ kiện du lịch', '...'),
 (5, 'Phụ kiện thời trang', '...');
@@ -136,9 +137,98 @@ INSERT INTO `sanpham` (`masp`, `nhom_id`, `tensp`, `mota`, `soluong`, `dongia`, 
 (7, '1', 'Giày thể thao trẻ em  ', '...  ', 20, 100000, 150000, 'a.jpg', 1, '...  '),
 (8, '2', 'Bóng rổ chuyên dụng Indoor', '...', 7, 170000, 200000, 'bongro.jpg', 1, '...'),
 (9, '5', 'Nón Bucket thời trang', '...', 11, 210000, 260000, 'bucket.jpg', 1, '...'),
-(10, '5', 'Phụ kiện đồng hồ nữ', '...', 4, 400000, 620000, 'mau-dong-ho-deo-tay-nu-mat-hinh-canh-buom.jpg', 1, '...');
+(10, '5', 'Phụ kiện đồng hồ nữ', '...', 4, 400000, 620000, 'mau-dong-ho-deo-tay-nu-mat-hinh-canh-buom.jpg', 1, '...'),
+(11, '1', 'Giày Sneaker nam', '...', 7, 260000, 310000, 'sneaker_trắng.jpg', 1, '...'),
+(12, '3', 'Vali TOPBAG', '...', 4, 190000, 260000, 'vali_xanh.webp', 1, '...'),
+(13, '2', 'Vợt cầu lông Tiến Minh yonex-arcsaber', '...', 12, 170000, 200000, 'vot-cau-long-yonex-arcsaber.webp', 1, '...');
 
 
+--
+-- Table structure for table `size and color`
+--
+
+CREATE TABLE `size` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `size` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `size` (`size`) VALUES ('S'), ('M'), ('L'), ('XL'), ('XXL');
+
+CREATE TABLE `mau_sac` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `mau_sac` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `mau_sac` (`mau_sac`) VALUES ('Đen'), ('Trắng'), ('Xanh'), ('Đỏ');
+
+--
+-- bảng liên kết  "sanpham_size" và "sanpham_mau_sac"
+--
+
+CREATE TABLE `sanpham_size` (
+  `sanpham_id` int(10) NOT NULL,
+  `size_id` int(10) NOT NULL,
+  PRIMARY KEY (`sanpham_id`, `size_id`),
+  FOREIGN KEY (`sanpham_id`) REFERENCES `sanpham`(`masp`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`size_id`) REFERENCES `size`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Liên kết sản phẩm với các size
+INSERT INTO `sanpham_size` (`sanpham_id`, `size_id`) VALUES 
+(1, 1), 
+(1, 3), 
+(1, 5), 
+(2, 2), 
+(2, 3), 
+(2, 5), 
+(3, 1), 
+(3, 2), 
+(3, 3), 
+(4, 1), 
+(4, 2), 
+(4, 3), 
+(5, 2), 
+(5, 3), 
+(7, 1), 
+(7, 2),  
+(8, 1), 
+(8, 2), 
+(8, 3), 
+(9, 2),
+(11, 1),
+(11, 2),
+(11, 3),
+(11, 4),
+(12, 3),
+(13, 2),
+(13, 3);
+
+CREATE TABLE `sanpham_mau_sac` (
+  `sanpham_id` int(10) NOT NULL,
+  `mau_sac_id` int(10) NOT NULL,
+  PRIMARY KEY (`sanpham_id`, `mau_sac_id`),
+  FOREIGN KEY (`sanpham_id`) REFERENCES `sanpham`(`masp`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`mau_sac_id`) REFERENCES `mau_sac`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Liên kết sản phẩm với các màu sắc
+INSERT INTO `sanpham_mau_sac` (`sanpham_id`, `mau_sac_id`) VALUES 
+(1, 1),
+(2, 2), 
+(3, 1), 
+(4, 3), 
+(5, 1), 
+(7, 1), 
+(7, 2), 
+(8, 3), 
+(9, 1), 
+(9, 3), 
+(10, 2),
+(11, 2),
+(12, 3),
+(13, 2); 
 
 --
 -- Table structure for table `taikhoan`
