@@ -102,7 +102,8 @@ INSERT INTO `sanpham_nhom` (`id`, `tennhom`, `ghichu`) VALUES
 (2, 'Dụng cụ thể thao dã ngoại', '...'),
 (3, 'Vali', '...'),
 (4, 'Phụ kiện du lịch', '...'),
-(5, 'Phụ kiện thời trang', '...');
+(5, 'Phụ kiện thời trang', '...'),
+(6,'quần áo thời trang nam - nữ', '...');
 
 --
 -- Table structure for table `sanpham`
@@ -123,24 +124,39 @@ CREATE TABLE `sanpham` (
   FOREIGN KEY (`nhom_id`) REFERENCES `sanpham_nhom`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
 -- Dumping data for table `sanpham`
---
-
 INSERT INTO `sanpham` (`masp`, `nhom_id`, `tensp`, `mota`, `soluong`, `dongia`, `dongiaold`, `img`, `enable`, `ghichu`) VALUES
-(1, '1', 'Giày thể thao nam', '...', 10, 300000, 400000, 'giaythethao.jpg', 1, '...'),
-(2, '1', 'Giày thể thao độn đế nữ ', '... ', 2, 390000, 420000, 'giaytheothaonu.jpg', 1, '... '),
-(3, '2', 'Vợt cầu lông Tiến Minh  ', '...  ', 3, 820000, 900000, 'Vợt cầu lông.jpg', 1, '...  '),
-(4, '2', 'Bóng chuyền Vnasport  ', '...  ', 3, 65000, 172000, 'quả-bóng-chuyền-vnasports.jpg', 1, '...  '),
-(5, '3', 'Vali Nhựa  ', '...  ', 14, 600000, 700000, 'vali-nhua-205-20-inch-24-inch-den-6-1.jpg', 1, '...  '),
-(6, '4', 'Hộp đựng bàn chải đánh răng  ', '...  ', 6, 70000, 82000, 'hopdungbanchai.jpg', 1, '...  '),
-(7, '1', 'Giày thể thao trẻ em  ', '...  ', 20, 100000, 150000, 'a.jpg', 1, '...  '),
-(8, '2', 'Bóng rổ chuyên dụng Indoor', '...', 7, 170000, 200000, 'bongro.jpg', 1, '...'),
-(9, '5', 'Nón Bucket thời trang', '...', 11, 210000, 260000, 'bucket.jpg', 1, '...'),
-(10, '5', 'Phụ kiện đồng hồ nữ', '...', 4, 400000, 620000, 'mau-dong-ho-deo-tay-nu-mat-hinh-canh-buom.jpg', 1, '...'),
-(11, '1', 'Giày Sneaker nam', '...', 7, 260000, 310000, 'sneaker_trắng.jpg', 1, '...'),
-(12, '3', 'Vali TOPBAG', '...', 4, 190000, 260000, 'vali_xanh.webp', 1, '...'),
-(13, '2', 'Vợt cầu lông Tiến Minh yonex-arcsaber', '...', 12, 170000, 200000, 'vot-cau-long-yonex-arcsaber.webp', 1, '...');
+(1, 1, 'Giày thể thao nam', '...', 10, 300000, 400000, 'giaythethao.jpg', 1, '...'),
+(2, 1, 'Giày thể thao độn đế nữ', '...', 2, 390000, 420000, 'giaytheothaonu.jpg', 1, '...'),
+(3, 2, 'Vợt cầu lông Tiến Minh', '...', 3, 820000, 900000, 'Vợt cầu lông.jpg', 1, '...'),
+(4, 2, 'Bóng chuyền Vnasport', '...', 3, 65000, 172000, 'quả-bóng-chuyền-vnasports.jpg', 1, '...'),
+(5, 3, 'Vali Nhựa', '...', 14, 600000, 700000, 'vali-nhua-205-20-inch-24-inch-den-6-1.jpg', 1, '...'),
+(6, 4, 'Hộp đựng bàn chải đánh răng', '...', 6, 70000, 82000, 'hopdungbanchai.jpg', 1, '...'),
+(7, 1, 'Giày thể thao trẻ em', '...', 20, 100000, 150000, 'a.jpg', 1, '...'),
+(8, 2, 'Bóng rổ chuyên dụng Indoor', '...', 7, 170000, 200000, 'bongro.jpg', 1, '...'),
+(9, 5, 'Nón Bucket thời trang', '...', 11, 210000, 260000, 'bucket.jpg', 1, '...'),
+(10, 5, 'Phụ kiện đồng hồ nữ', '...', 4, 400000, 620000, 'mau-dong-ho-deo-tay-nu-mat-hinh-canh-buom.jpg', 1, '...'),
+(11, 1, 'Giày Sneaker nam', '...', 7, 260000, 310000, 'sneaker_trắng.jpg', 1, '...'),
+(12, 3, 'Vali TOPBAG', '...', 4, 190000, 260000, 'vali_xanh.webp', 1, '...'),
+(13, 2, 'Vợt cầu lông Tiến Minh yonex-arcsaber', '...', 12, 170000, 200000, 'vot-cau-long-yonex-arcsaber.webp', 1, '...'),
+(14, 1, 'Giày thể thao nữ độn đáy', '...', 10, 195000, 260000, 'giay_the_thao_nu_don_day.jpg', 1, '...'),
+(15, 1, 'Giày bóng rổ xám phong cách', '...', 7, 270000, 310000, 'giaybongro.jpg', 1, '...'),
+(16, 1, 'Giày Bóng rổ Nike thời trang', '...', 7, 400000, 520000, 'hihi.jpg', 1, '...'),
+(17, 1, 'Giày Nike thời trang', '...', 7, 370000, 430000, 'giaynike.jpg', 1, '...'),
+(18, 5, 'Bịt tai nhung giữ ấm', '...', 7, 70000, 95000, 'bittai.jpg', 1, '...'),
+(19, 6, 'Áo thun nam', '...', 7, 180000, 200000, 'aothunnam.jpg', 1, '...'),
+(20, 6, 'Áo thun nữ', '...', 7, 170000, 200000, 'aothunnu.jpg', 1, '...'),
+(21, 6, 'Áo thời trang over size nữ', '...', 7, 195000, 210000, 'ao_oversize_nu.jpg', 1, '...'),
+(22, 6, 'Áo ba lỗ nam', '...', 7, 70000, 100000, 'aobalo.jpg', 1, '...'),
+(23, 6, 'Quần jean nam', '...', 7, 370000, 400000, 'quanjeannam.jpg', 1, '...'),
+(24, 6, 'Quần jogger', '...', 7, 280000, 320000, 'quanjogger.jpg', 1, '...'),
+(25, 6, 'Quần short jean nữ', '...', 7, 240000, 300000, 'short_jean.jpg', 1, '...'),
+(26, 6, 'Phối đồ gile', '...', 7, 360000, 400000, 'phoidogile.jpg', 1, '...'),
+(27, 6, 'Phối đồ nam vest', '...', 7, 370000, 400000, 'phoidonam3.jpg', 1, '...'),
+(28, 5, 'Khăn quàng nam mùa đông', '...', 10, 170000, 200000, 'khanquangnam.jpg', 1, '...'),
+(29, 5, 'Kính râm nam nữ', '...', 7, 170000, 200000, 'kinhdamnamnu.jpg', 1, '...'),
+(30, 2, 'Quả cầu lông', '...', 50, 20000, 40000, 'caulong.jpg', 1, '...');
+
 
 
 --
@@ -153,7 +169,7 @@ CREATE TABLE `size` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `size` (`size`) VALUES ('S'), ('M'), ('L'), ('XL'), ('XXL');
+INSERT INTO `size` (`size`) VALUES ('30'),('36'),('37'),('38'),('39'),('40'),('41'),('42'),('43');
 
 CREATE TABLE `mau_sac` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -161,7 +177,7 @@ CREATE TABLE `mau_sac` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `mau_sac` (`mau_sac`) VALUES ('Đen'), ('Trắng'), ('Xanh'), ('Đỏ');
+INSERT INTO `mau_sac` (`mau_sac`) VALUES ('Đen'), ('Trắng'), ('Xanh'), ('Đỏ'), ('vàng'),('cam'),('xám');
 
 --
 -- bảng liên kết  "sanpham_size" và "sanpham_mau_sac"
@@ -177,11 +193,14 @@ CREATE TABLE `sanpham_size` (
 
 -- Liên kết sản phẩm với các size
 INSERT INTO `sanpham_size` (`sanpham_id`, `size_id`) VALUES 
-(1, 1), 
-(1, 3), 
 (1, 5), 
+(1, 6), 
+(1, 7),
+(1, 8), 
+(1, 9), 
 (2, 2), 
 (2, 3), 
+(2, 4),
 (2, 5), 
 (3, 1), 
 (3, 2), 
@@ -197,13 +216,55 @@ INSERT INTO `sanpham_size` (`sanpham_id`, `size_id`) VALUES
 (8, 2), 
 (8, 3), 
 (9, 2),
-(11, 1),
-(11, 2),
-(11, 3),
-(11, 4),
+(11, 6),
+(11, 7),
+(11, 8),
+(11, 9),
 (12, 3),
 (13, 2),
-(13, 3);
+(13, 3),
+(14, 2), 
+(14, 3), 
+(14, 4),
+(14, 5),
+(15, 6),
+(15, 7),
+(15, 8),
+(15, 9),
+(16, 7),
+(16, 8),
+(16, 9),
+(17, 7),
+(17, 8),
+(18, 6),
+(18, 7),
+(18, 8),
+(19, 5),
+(19, 7),
+(19, 8),
+(20, 4),
+(20, 5),
+(21, 8),
+(21, 9),
+(22, 6),
+(22, 7),
+(22, 8),
+(23, 6),
+(23, 7),
+(23, 8),
+(24, 6),
+(24, 7),
+(24, 8),
+(25, 4),
+(25, 5),
+(25, 6),
+(26, 6),
+(26, 7),
+(26, 8),
+(27, 6),
+(27, 7),
+(27, 8);
+
 
 CREATE TABLE `sanpham_mau_sac` (
   `sanpham_id` int(10) NOT NULL,
@@ -214,6 +275,7 @@ CREATE TABLE `sanpham_mau_sac` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Liên kết sản phẩm với các màu sắc
+-- ('Đen'), ('Trắng'), ('Xanh'), ('Đỏ'), ('vàng'),('cam'),('xám');
 INSERT INTO `sanpham_mau_sac` (`sanpham_id`, `mau_sac_id`) VALUES 
 (1, 1),
 (2, 2), 
@@ -228,7 +290,35 @@ INSERT INTO `sanpham_mau_sac` (`sanpham_id`, `mau_sac_id`) VALUES
 (10, 2),
 (11, 2),
 (12, 3),
-(13, 2); 
+(13, 2),
+(14, 6),
+(15, 7),
+(16, 7),
+(17, 2),
+(18, 3),
+(19, 2),
+(20, 2),
+(21, 2),
+(22, 2),
+(23, 1),
+(23, 7),
+(24, 1),
+(24, 7),
+(25, 3),
+(26, 2),
+(26, 7),
+(27, 1),
+(27, 2),
+(27, 3),
+(28, 7),
+(29, 1),
+(29, 2),
+(29, 3),
+(29, 4),
+(29, 6),
+(29, 7),
+(30, 2);
+
 
 --
 -- Table structure for table `taikhoan`

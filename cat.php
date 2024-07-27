@@ -40,7 +40,7 @@ if ($selected_mau_sac) {
     $sql .= " AND spms.mau_sac_id = '$selected_mau_sac'";
 }
 
-$sql .= " LIMIT 4";
+$sql .= " LIMIT 10";
 $result = mysqli_query($conn, $sql);
 
 ?>
